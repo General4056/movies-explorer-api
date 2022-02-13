@@ -46,7 +46,7 @@ module.exports.movieValidation = celebrate({
     thumbnail: Joi.string()
       .required()
       .custom(validateURL, 'custom validation'),
-    movieId: Joi.string().required(),
+    movieId: Joi.number().required(),
     nameRU: Joi.string().required().min(2),
     nameEN: Joi.string().required().min(2),
   }),

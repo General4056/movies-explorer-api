@@ -11,6 +11,7 @@ const unauthorizedMessage = 'Пользователь неавторизован
 const serverErrorMessage = 'На сервере произошла ошибка';
 const wrongEmailOrPasswordMessage = 'Неправильные почта или пароль';
 const pageNotFoundMessage = 'Страница не найдена';
+const mongoInvalidUrlMessage = 'url ссылки невалиден';
 
 module.exports = {
   passedIncorrectDataMessage,
@@ -26,4 +27,5 @@ module.exports = {
   serverErrorMessage,
   wrongEmailOrPasswordMessage,
   pageNotFoundMessage,
+  mongoInvalidUrlMessage,
 };

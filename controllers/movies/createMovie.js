@@ -1,37 +1,9 @@
 const Movie = require('../../models/movie');
 const ValidationError = require('../../errors/ValidationError');
-const { passedIncorrectDataMessage } = require('../constants/constants');
+const { passedIncorrectDataMessage } = require('../../constants/constants');
 
 module.exports.createMovie = (req, res, next) => {
-  const { _id } = req.user;
-  const {
-    country,
-    director,
-    duration,
-    year,
-    description,
-    image,
-    trailerLink,
-    nameRU,
-    nameEN,
-    thumbnail,
-    movieId,
-  } = req.body;
-
-  Movie.create({
-    country,
-    director,
-    duration,
-    year,
-    description,
-    image,
-    trailerLink,
-    nameRU,
-    nameEN,
-    thumbnail,
-    movieId,
-    owner: _id,
-  })
+  Movie.create({ owner: req.user._id, ...req.body })
     .then(({
       country,
       director,

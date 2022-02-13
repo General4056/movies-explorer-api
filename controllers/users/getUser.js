@@ -1,7 +1,6 @@
 const User = require('../../models/user');
 const NotFoundError = require('../../errors/NotFoundError');
-const CastError = require('../../errors/CastError');
-const { noSuchUserMessage, invalidUserIdMessage } = require('../constants/constants');
+const { noSuchUserMessage } = require('../../constants/constants');
 
 module.exports.getUser = (req, res, next) => {
   const { _id } = req.user;
@@ -13,11 +12,5 @@ module.exports.getUser = (req, res, next) => {
       const { name, email } = user;
       return res.status(200).send({ name, email });
     })
-    .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new CastError(invalidUserIdMessage));
-      } else {
-        next(err);
-      }
-    });
+    .catch(next);
 };
