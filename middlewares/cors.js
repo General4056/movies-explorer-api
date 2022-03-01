@@ -1,6 +1,6 @@
 const allowedCors = [
-  // 'https://general4056-mesto.nomoredomains.rocks',
-  // 'http://general4056-mesto.nomoredomains.rocks',
+  'http://general-movies.nomoredomains.work',
+  'https://general-movies.nomoredomains.work',
   'http://localhost:3000',
   'https://localhost:3000',
   'http://localhost:3001',
