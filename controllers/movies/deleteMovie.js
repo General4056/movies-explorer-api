@@ -9,6 +9,7 @@ module.exports.deleteMovie = (req, res, next) => {
 
   Movie.findById(movieId)
     .then((movie) => {
+      console.log(req.user._id);
       if (!movie) {
         throw new NotFoundError(wrongIdMessage);
       }
